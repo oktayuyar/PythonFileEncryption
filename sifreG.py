@@ -7,9 +7,12 @@
 # WARNING! All changes made in this file will be lost!
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
+import subprocess
+import time
 from PyQt5.QtWidgets import *
 import images_rc
 psw = '123'
+path = '/home/furkan'
 class Ui_Giris(object):
     def setupUi(self, Giris):
         Giris.setObjectName("Giris")
@@ -55,7 +58,7 @@ class Ui_Giris(object):
 "}\n"
 " \n"
 "#btn:hover{\n"
-"    background-color: #2c62b5;\n"
+"     background-color: rgb(0, 255, 255);\n"
 "}\n"
 " \n"
 "#btn:pressed, #btn:default:hover:pressed\n"
@@ -157,7 +160,7 @@ class Ui_Giris(object):
         self.btn.setSizePolicy(sizePolicy)
         self.btn.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/images/img/Apps-Dialog-Logout-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/images/img/login.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn.setIcon(icon1)
         self.btn.setIconSize(QtCore.QSize(45, 40))
         self.btn.setObjectName("btn")
@@ -191,7 +194,9 @@ class Ui_Giris(object):
 
     def girisYap(self):
             if(self.sifre.text()==psw):
-                    self.sonuc.setText("Şifre Doğru")
+                    subprocess.check_call(['xdg-open', path])
+                    time.sleep(0.1)
+                    quit()
             else:
                     self.sonuc.setText("Sonuc Yanlış")
 
