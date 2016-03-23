@@ -7,7 +7,7 @@ class Admin:
         self.sifrelileri_listele()
 
     def sifre_ekle(self):
-        Admin.sifreler.append("klasörün adı:"+str(self.isim)+"----sifresi: "+str(self.sifre))
+        Admin.sifreler.append("klasörün adı:"+str(self.isim)+"---sifresi: "+str(self.sifre))
 
     @classmethod
     def sifrelileri_listele(cls):
