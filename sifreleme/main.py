@@ -9,6 +9,6 @@ if(sifre==root):
     c1=Admin(klasör,sifre)
     subprocess.check_call(['xdg-open', path])
 else:
-    print("Sonuc Yanlış")
+    print("Şifre Yanlış")
 
 Admin.sifrelileri_listele()
