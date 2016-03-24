@@ -13,8 +13,8 @@ import subprocess
 import time
 import images_rc
 
-psw = '123'
-path = '/home/furkan'
+psw = '190323'
+path = '/home/oktay'
 
 class Ui_Giris(object):
     def setupUi(self, Giris):
@@ -66,7 +66,6 @@ class Ui_Giris(object):
         Giris.setTabShape(QtWidgets.QTabWidget.Rounded)
         Giris.setDockNestingEnabled(False)
         Giris.setDockOptions(QtWidgets.QMainWindow.AllowTabbedDocks|QtWidgets.QMainWindow.AnimatedDocks)
-        Giris.setUnifiedTitleAndToolBarOnMac(False)
         self.ana = QtWidgets.QWidget(Giris)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
@@ -157,6 +156,8 @@ class Ui_Giris(object):
         self.label.setObjectName("label")
         Giris.setCentralWidget(self.ana)
 
+
+
         self.retranslateUi(Giris)
         QtCore.QMetaObject.connectSlotsByName(Giris)
 
@@ -166,37 +167,14 @@ class Ui_Giris(object):
         self.sifre.setPlaceholderText(_translate("Giris", "Şifreniz..."))
         self.label.setText(_translate("Giris", "<html><head/><body><p><span style=\" color:#ffffff;\">Dosya Şifreli Lütfen Şifreyi Giriniz</span></p></body></html>"))
 
-    def kapat(self):
-            quit()
 
-    def girisYap(self):
-            if(self.sifre.text()==psw):
-                    subprocess.check_call(['xdg-open', path])
-                    time.sleep(0.1)
-                    quit()
-            else:
-                     QtWidgets.QMessageBox.information(self,"Bilgi","Şifreyi Yanlış Girdiniz.")
-
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            if(self.sifre.text()==psw):
-                    subprocess.check_call(['xdg-open', path])
-                    time.sleep(0.1)
-                    quit()
-            else:
-                    QtWidgets.QMessageBox.information(self,"Bilgi","Şifreyi Yanlış Girdiniz.")
-        if event.key() == Qt.Key_Escape:
-            quit()
 
 class MyMainWindow(QtWidgets.QMainWindow, Ui_Giris):
         def __init__(self):
-
             super(MyMainWindow, self).__init__()
             self.setupUi(self)
-            self.btn.clicked.connect(self.girisYap)
-            self.clos.clicked.connect(self.kapat)
-            self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
-            self.setAttribute(Qt.WA_TranslucentBackground)
+
+
 
 if __name__=="__main__":
     app = QtWidgets.QApplication(sys.argv)
