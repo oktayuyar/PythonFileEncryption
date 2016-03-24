@@ -3,6 +3,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 #import QtLocation 5.3
+from PyQt5.QtGui import QIcon
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -19,7 +21,7 @@ class Ui_MainWindow(object):
         self.listView.setObjectName("listView")
         self.pushButton = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton.setGeometry(QtCore.QRect(570, 10, 85, 26))
-        self.pushButton.setObjectName("pushButton")
+        self.pushButton.setObjectName("btn")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_2.setGeometry(QtCore.QRect(570, 60, 85, 26))
         self.pushButton_2.setObjectName("pushButton_2")
@@ -67,15 +69,16 @@ class Ui_MainWindow(object):
         self.menuOktay.addAction("a")
         self.menuOktay.addAction("b")
         self.menuOktay.addAction("c")
-        self.menuEdit.addSeparator()
-        self.menuEdit.addSeparator()
-        self.menuEdit.addSeparator()
-        self.menuView.addSeparator()
-        self.menuView.addSeparator()
-        self.menuView.addSeparator()
+        self.menuEdit.addAction("a")
+        self.menuEdit.addAction("b")
+        self.menuEdit.addAction("c")
+        self.menuView.addAction("a")
+        self.menuView.addAction("b")
+        self.menuView.addAction("c")
         self.menuBar.addAction(self.menuOktay.menuAction())
         self.menuBar.addAction(self.menuEdit.menuAction())
         self.menuBar.addAction(self.menuView.menuAction())
+
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -105,5 +108,6 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
     sys.exit(app.exec_())
 
