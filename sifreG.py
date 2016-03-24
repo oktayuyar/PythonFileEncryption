@@ -13,8 +13,7 @@ import subprocess
 import time
 import images_rc
 
-psw = '190323'
-path = '/home/oktay'
+
 
 class Ui_Giris(object):
     def setupUi(self, Giris):
