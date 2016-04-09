@@ -44,7 +44,6 @@ def encrypt():
 
                         sifreli_dosya.write(encryptor.encrypt(chunk))
 
-
 def decrypt():
     yol ="/home/oktay/d/a.txt.enc";
     dosya = yol;
