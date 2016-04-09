@@ -26,7 +26,7 @@ def encrypt():
             while True:
                 for i in range(0,len(dosya)):
                     if kelime in dosya:
-                        chunk = sifrelencek_dosya.read(16).decode('utf-8')
+                        chunk = sifrelencek_dosya.read(64)
                         length = len(chunk)
                         if length == 0:
                             break
