@@ -1,2 +1,1 @@
-# SistemProgramlama
-Linux sistemi üzerinde dosya şifreleme programı ve bu programın yazılacak bir scriptle sağ tık seçeneklerine eklenmesi
+# Python ile QtDesigner kullanarak txt uzantılı dosyaların aes algoritması kullanılarak şifrelenmesi ve şifrelenmiş dosyaların çözülmesi
